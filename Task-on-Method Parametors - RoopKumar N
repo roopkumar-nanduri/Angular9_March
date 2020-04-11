@@ -1,0 +1,44 @@
+class  FParam{
+
+//public a:number;
+//public b:number;
+public PrintAdd(a:number,b:number):void
+{
+    console.log(`A+B is :${a+b}`)
+}
+public  PrintCalc(a:number,b:number,optype?:string):void
+{
+    console.log("Accepting User inputs and performing the  selected operation");
+if(optype!=undefined)
+{
+    optype=optype.toLowerCase();
+}
+ switch (optype)
+{
+case "add":
+console.log(` Addition OF  A B:${a*b}`);
+break;
+case "sub":
+    console.log(`Substracton of A - B:  ${a-b}`);
+    break;
+    case "div":
+        console.log(`Division: A/B:  ${a/b}`);
+    break;
+    case "mul":
+        console.log(`Multiplication: A*B  :  ${a*b}`) ;
+break;
+        default:
+            console.log("No valid Operation has been selected");
+
+} 
+
+}
+
+}
+
+let opt= new FParam();
+opt.PrintAdd(5,10); // add operation
+
+opt.PrintCalc(5,5,"MuL"); //operation with case not sensitive 
+opt.PrintCalc(5,5,"discount");  //invalid option
+opt.PrintCalc(5,5);    // optional 
